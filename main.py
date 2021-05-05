@@ -2,9 +2,9 @@ from pyrogram import Client, filters
 
 app = Client(
     "sharingan_analysis",
-    api_id=secrets.API_ID,
-    api_hash=secrets.API_HASH,
-    bot_token=secrets.BOT_TOKEN,
+    api_id=creds.API_ID,
+    api_hash=creds.API_HASH,
+    bot_token=creds.BOT_TOKEN,
 )
 
 @app.on_message(

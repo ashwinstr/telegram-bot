@@ -16,5 +16,10 @@
       "description": "Get this value from my.telegram.org!",
       "value": ""
     },
-  },
+  }
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
 }

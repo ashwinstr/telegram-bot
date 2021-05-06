@@ -2,7 +2,15 @@
     "name": "Sharingan Analysis",
     "description": "A telegram bot which can do many things",
     "repository": "https://github.com/ashwinstr/telegram-bot",
-    "keywords": ["sharingan","telegram","telegram bot","bot","pyrogram","analysis","information gathering"],
+    "keywords": [
+        "sharingan",
+        "telegram",
+        "telegram bot",
+        "bot",
+        "pyrogram",
+        "analysis",
+        "information gathering",
+    ],
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token from @Botfather",

@@ -1,17 +1,22 @@
+import 
 from pyrogram import Client, filters
 
-app = Client(
-    "sharingan_analysis",
-    api_id=creds.API_ID,
-    api_hash=creds.API_HASH,
-    bot_token=creds.BOT_TOKEN,
-)
 
-@app.on_message(
-    filters.command(["start"])
-)
-async def start_(client, message):
-    await client.send_message(
-        message.chat.id,
-        f"Hello {message.from_user.first_name}, thank you for using this bot...",
+
+
+APP_ID = config("APP_ID", default=None, cast=int)
+API_HASH = config("API_HASH", default=None)
+BOT_TOKEN = config("BOT_TOKEN", default=None)
+
+
+if __name__ == "__main__" :
+    print("Starting Bot...")
+    plugins = dict(root="jutsu/plugins")
+    app = pyrogram.Client(
+        "sharingan",
+        bot_token=BOT_TOKEN,
+        api_id=APP_ID,
+        api_hash=API_HASH,
+        plugins=plugins
     )
+    app.run()

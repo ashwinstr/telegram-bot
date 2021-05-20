@@ -1,2 +1,3 @@
+PyDictionary
 pyrogram
 python-decouple

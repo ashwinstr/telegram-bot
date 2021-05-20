@@ -1,6 +1,6 @@
-import 
+import os
 from pyrogram import Client, filters
-
+from decouple import config
 
 
 

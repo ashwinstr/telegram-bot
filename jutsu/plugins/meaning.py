@@ -11,7 +11,7 @@ async def meaning_(bot, message):
         await reply.edit("Input not found...")
         return
     else:
-        word = len_[1:]
+        word = msg_split[1:]
         dictionary = PyDictionary()
         words = dictionary.meaning(word)
         output = f"**Word :** __{word}__\n"

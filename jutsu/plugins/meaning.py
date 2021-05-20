@@ -6,9 +6,7 @@ from pyrogram import Client, filters
 async def meaning_(bot, message):
     reply = await bot.send_message(message.chat.id, "`Searching for meaning...`", reply_to_message_id=message.message_id)
     msg_split = (message.text).split()
-    await bot.send_message(message.chat.id, msg_split)
     len_ = len(msg_split)
-    await bot.send_message(message.chat.id, len_)
     if len_ < 2:
         await reply.edit("Input not found...")
         return
@@ -21,7 +19,7 @@ async def meaning_(bot, message):
             for a, b in words.items():
                 output = output + f"\n**{a}**\n"
                 for i in b:
-                    output = output + f"â¾ __{i}__\n"
+                    output = output + f"◾ __{i}__\n"
             await reply.edit(output)
         except Exception:
             await reply.err(f"Couldn't fetch meaning of {word}")

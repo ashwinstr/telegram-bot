@@ -5,8 +5,8 @@ from pyrogram import Client, filters
 @Client.on_message(filters.command(["mng"]))
 async def meaning_(bot, message):
     reply = await bot.send_message(message.chat.id, "`Searching for meaning...`", reply_to_message_id=message.message_id)
-    len_ = len(message.text)
-    len_ = len_.split()
+    msg_split = (message.text).split()
+    len_ = len(msg_split)
     if len_ < 2:
         await reply.edit("Input not found...")
         return

@@ -1,4 +1,4 @@
-import PyDictionary
+from PyDictionary import PyDictionary
 from pyrogram import Client, filters
 
 

@@ -7,7 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 from googlesearch import search
 
-from jutsu.helpers import post_to_telegraph as pt
+from jutsu.helpers.telegraph import post_to_telegraph as pt
 
 from pyrogram import Client, filters
 

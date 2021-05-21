@@ -9,7 +9,7 @@ async def syno_(bot, message):
     word = message.text
     word = word.split()
     if len(word) < 2:
-        await bot.err("Input not found...")
+        await bot.send_message(message.chat.id, "Input not found...")
         return
     word = word[1]
     reply = await bot.send_message(message.chat.id, "`Searching for synonyms...`", reply_to_message_id=message.message_id)

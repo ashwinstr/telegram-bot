@@ -1,5 +1,7 @@
+aiohttp
 html-telegraph-poster
 lyricsgenius
 PyDictionary
 pyrogram
 python-decouple
+requests

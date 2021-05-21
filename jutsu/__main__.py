@@ -7,6 +7,7 @@ from decouple import config
 APP_ID = config("APP_ID", default=None, cast=int)
 API_HASH = config("API_HASH", default=None)
 BOT_TOKEN = config("BOT_TOKEN", default=None)
+GENIUS = config("GENIUS", default=None)
 
 
 if __name__ == "__main__" :

@@ -81,6 +81,9 @@ async def g_lyrics(bot, message):
     except Exception:
         await reply.edit(f"Lyrics for <code>{title}</code> not found...")
         return
+    if lyr is None:
+        await reply.edit(f"Couldn't find `{title}` on Genius...")
+        return
     lyric = lyr.lyrics
     lyrics = f"\n{lyric}"
     lyrics += f"\n\n<b>Written by:</b> <code>{writers}</code>"

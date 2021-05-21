@@ -26,7 +26,7 @@ async def g_lyrics(bot, message):
     input = message.text
     input = input.split()
     if len(input) < 2:
-        await bot.send_message(message.chat.id, "Input not found...")
+        await bot.send_message(message.chat.id, "Input not found...", reply_to_message_id=message.message_id)
         return
     song = " ".join(input[1:])
     if GENIUS is None:
@@ -71,11 +71,15 @@ async def g_lyrics(bot, message):
         title = song
     else:
         title = f"{artist} - {song}"
-    await message.edit(f"Searching lyrics for **{title}** on Genius...`")
+    reply = await bot.send_message(
+        message.chat.id,
+        f"Searching lyrics for **{title}** on Genius...`",
+        reply_to_message_id=message.message_id,
+    )
     try:
         lyr = genius.search_song(song, artist)
     except Exception:
-        await bot.send_message(message.chat.id, f"Lyrics for <code>{title}</code> not found...")
+        await reply.edit(f"Lyrics for <code>{title}</code> not found...")
         return
     lyric = lyr.lyrics
     lyrics = f"\n{lyric}"
@@ -85,16 +89,10 @@ async def g_lyrics(bot, message):
     lyrics = lyrics.replace("]", "]</b>")
     lyr_msg = f"Lyrics for <b>{title}</b>...\n\n{lyrics}"
     if len(lyr_msg) <= 4096:
-        await bot.send_message(
-            message.chat.id,
-            f"{lyr_msg}",
-            reply_to_message_id=message.message_id,
-        )
+        await reply.edit(f"{lyr_msg}")
     else:
         lyrics = lyrics.replace("\n", "<br>")
         link = pt(f"Lyrics for {title}...", lyrics)
-        await bot.send_message(
-            message.chat.id,
+        await reply.edit(
             f"Lyrics for [<b>{title}</b>]({link}) by genius.com...",
-            reply_to_message_id=message.message_id,
         )

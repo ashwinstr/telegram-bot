@@ -9,7 +9,7 @@ async def meaning_(bot, message):
     msg_split = (message.text).split()
     len_ = len(msg_split)
     if len_ < 2:
-        await bot.send_message(message.chat.id, "Input not found...")
+        await bot.send_message(message.chat.id, "Input not found...", reply_to_message_id=message.message_id)
         return
     reply = await bot.send_message(message.chat.id, "`Searching for meaning...`", reply_to_message_id=message.message_id)
     word = msg_split[1]

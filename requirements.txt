@@ -1,3 +1,4 @@
+html-telegraph-poster
 lyricsgenius
 PyDictionary
 pyrogram

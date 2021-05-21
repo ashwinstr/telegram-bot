@@ -20,7 +20,7 @@ if GENIUS is not None:
 
 
 @Client.on_message(
-    filters.command([glyrics])
+    filters.command(["glyrics"])
 )
 async def g_lyrics(bot, message):
     input = message.text

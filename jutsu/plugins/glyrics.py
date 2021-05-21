@@ -1,5 +1,6 @@
 import lyricsgenius
 
+import os
 import aiohttp
 import requests
 
@@ -9,6 +10,9 @@ from googlesearch import search
 from jutsu.helpers import post_to_telegraph as pt
 
 from pyrogram import Client, filters
+
+
+GENIUS = os.environ.get("GENIUS")
 
 
 if GENIUS is not None:

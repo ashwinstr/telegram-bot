@@ -92,7 +92,7 @@ async def g_lyrics(bot, message):
         )
     else:
         lyrics = lyrics.replace("\n", "<br>")
-        link = post_to_telegraph(f"Lyrics for {title}...", lyrics)
+        link = pt(f"Lyrics for {title}...", lyrics)
         await bot.send_message(
             message.chat.id,
             f"Lyrics for [<b>{title}</b>]({link}) by genius.com...",

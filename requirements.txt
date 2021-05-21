@@ -1,3 +1,4 @@
+lyricsgenius
 PyDictionary
 pyrogram
 python-decouple

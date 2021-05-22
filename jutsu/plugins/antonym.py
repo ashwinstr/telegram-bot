@@ -2,8 +2,8 @@ from PyDictionary import PyDictionary
 from pyrogram import Client, filters
 
 
-@Client.on_cmd(
-    "ayn",
+@Client.on_message(
+    filters.command(["ayn"])
 )
 async def syno_(bot, message):
     word = message.input_str

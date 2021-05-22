@@ -2,16 +2,13 @@ from PyDictionary import PyDictionary
 from pyrogram import Client, filters
 
 
-@Client.on_message(
-    filters.command(["ayn"])
+@Client.on_cmd(
+    "ayn",
 )
 async def syno_(bot, message):
-    word = message.text
-    word = word.split()
-    if len(word) < 2:
-        await bot.send_message(message.chat.id, "Input not found...", reply_to_message_id=message.message_id)
-        return
-    word = word[1]
+    word = message.input_str
+    if not word:
+        await bot.reply("Input not found...")
     reply = await bot.send_message(message.chat.id, "`Searching for antonyms...`", reply_to_message_id=message.message_id)
     dictionary = PyDictionary()
     words = dictionary.antonym(word)

@@ -3,6 +3,6 @@ google
 html-telegraph-poster
 lyricsgenius
 PyDictionary
-pyrogram
+git+https://github.com/ashwinstr/pyrogram.git@x21
 python-decouple
 requests

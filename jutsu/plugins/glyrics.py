@@ -26,7 +26,7 @@ async def g_lyrics(bot, message):
     input = message.text
     input = input.split()
     if len(input) < 2:
-         async with userge.conversation("JustAskHere_bot") as conv:
+         async with bot.conversation("JustAskHere_bot") as conv:
              await conv.bot.send_message(message.chat.id, "Now send [artist name] - [song name]...", reply_to_message_id=message.message_id)
              song = await conv.get_response(mark_read=True)
 #        await bot.send_message(message.chat.id, "Input not found...", reply_to_message_id=message.message_id)
